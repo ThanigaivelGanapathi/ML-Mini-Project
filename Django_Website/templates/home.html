@@ -1,0 +1,260 @@
+<!-- templates/home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Loan Eligibility Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'LoanPredictor/css/styles.css' %}">
+  <link rel="shortcut icon" href="{% static 'LoanPredictor/images/rupee.png' %}" type="image/x-icon">
+  <style>
+    .dropdown-menu-end {
+      right: 0;
+      left: auto;
+    }
+    @media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        position: absolute;
+        left: -60px;
+      }
+  }
+
+  </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#1877F2">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Loan Predictor</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">Home</a>
+        </li>
+
+         <li class="nav-item">
+          <a class="nav-link" href="predict">Predict</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Resources
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% static 'LoanPredictor/Resources/IEEE_Paper.pdf' %}" target="_blank">IEEE Paper</a></li>
+            <li><a class="dropdown-item" href="{% static 'LoanPredictor/Resources/Abstract.pdf' %}" target="_blank">Abstract Paper</a></li>
+            <li><a class="dropdown-item" href="{% static 'LoanPredictor/Resources/PPT.pdf' %}" target="_blank">Project PPT</a></li>
+<!--            <li><hr class="dropdown-divider"></li>-->
+<!--            <li><a class="dropdown-item" href="#">Separated link</a></li>-->
+          </ul>
+       </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id = 'landing-page'>
+  <div id = 'img-overlay'>
+    <img src="{% static 'LoanPredictor/images/loanImg.png' %}" alt="Loan Banner" class="img-fluid" style="width:100%;">
+  </div>
+</div>
+
+<!--Abstract-->
+<div class="container section">
+  <h1 class="header-txt">Abstract</h1>
+  <p class="txt-body">
+    In recent years, the financial industry has experienced a significant transformation with the introduction of automated decision-making systems powered by Machine Learning (ML). One of the critical applications of ML in the financial sector is loan approval forecasting, where traditional manual decision-making processes are augmented or replaced by data-driven models. The goal of this project is to predict loan approval decisions based on a range of applicant features, including personal information such as income, credit score, employment history, and loan characteristics, to enhance the efficiency and accuracy of loan approval processes.
+    This project utilizes machine learning algorithms to automate and enhance the loan approval process. By analyzing key factors such as income, credit history, employment status, and loan amount, the model predicts whether an applicant is eligible for a loan. Various classification algorithms, including Logistic Regression, Decision Trees, and Random Forest, are employed to achieve high accuracy. This data-driven approach improves efficiency, reduces manual errors, and ensures fair decision-making in loan approvals.
+  </p>
+</div>
+
+<!--Existing System-->
+<div class="container section">
+  <h1 class="header-txt">Existing System</h1>
+  <p class="txt-body">
+    The traditional loan approval process in financial institutions relies on manual evaluation by loan officers. Applicants submit their financial details, including income, credit history, employment status, and debt obligations. The loan officers then assess the eligibility based on predefined rules and guidelines.
+However, this system has several limitations:
+    <ul>
+      <li>1.	Time-Consuming – Manual verification and evaluation can be slow, leading to delays in loan approval.</li>
+      <li>2.	Prone to Human Errors & Bias – Decisions may be inconsistent due to subjective judgment by loan officers.</li>
+      <li>3.	Limited Data Utilization – Traditional methods fail to leverage large datasets for better insights and accuracy.</li>
+      <li>4.	High Risk of Defaults – Due to inefficient risk assessment, loans may be granted to ineligible applicants, increasing financial losses.</li>
+    </ul>
+
+    These challenges highlight the need for an automated and data-driven approach using machine learning to improve loan approval forecasting.
+  </p>
+</div>
+
+<!--Drawbacks-->
+<div class="container section">
+  <h1 class="header-txt">Drawbacks</h1>
+  <p class="txt-body">
+    While machine learning improves loan approval forecasting, the system has some limitations:
+    <ul>
+      <li>1.	Data Dependency – The accuracy of predictions depends heavily on the quality and quantity of training data. Poor or biased data can lead to incorrect results.</li>
+      <li>2.	Feature Selection Challenges – Identifying the most relevant factors influencing loan approval can be complex and requires domain expertise.</li>
+      <li>3.	Black Box Nature – Some advanced machine learning models, like deep learning and ensemble methods, lack interpretability, making it difficult to explain decisions to applicants and regulators.</li>
+      <li>4.	Overfitting Risk – The model may perform well on training data but fail to generalize to new or unseen data, leading to poor real-world performance.</li>
+      <li>5.	Ethical and Legal Concerns – If the training data contains historical biases, the model may unintentionally discriminate against certain groups, raising fairness and compliance issues.</li>
+      <li>6.	Continuous Maintenance Required – The model needs regular updates to stay accurate, especially as financial trends, policies, and customer behaviors change.</li>
+    </ul>
+    Despite these challenges, machine learning can significantly enhance loan approval forecasting when combined with careful data preprocessing, feature engineering, and model evaluation techniques.
+  </p>
+</div>
+
+<!--Proposed System-->
+<div class="container section">
+  <h1 class="header-txt">Proposed System</h1>
+  <p class="txt-body">
+    The proposed system leverages machine learning algorithms to automate and improve the loan approval forecasting process. By analyzing key factors such as income, credit history, employment status, loan amount, and debt-to-income ratio, the model predicts whether an applicant is eligible for a loan with high accuracy.
+    Key Features of the Proposed System:
+    <ul>
+      <li>1.	Increased Prediction Accuracy – The system uses advanced machine learning techniques, such as Random Forest, XGBoost, and Neural Networks, with feature selection and hyperparameter tuning to enhance accuracy.</li>
+      <li>2.	Automated Decision-Making – Reduces manual intervention, speeding up the loan approval process while ensuring consistency.</li>
+      <li>3.	Data-Driven Risk Assessment – Identifies high-risk applicants by analyzing past loan approval patterns, helping financial institutions minimize default risks.</li>
+      <li>4.	Fair and Transparent Evaluation – Reduces human bias by making decisions based on historical data patterns and statistical analysis.</li>
+      <li>5.	Real-Time Prediction – Enables lenders to quickly assess applicants and provide near-instant loan approval decisions.</li>
+    </ul>
+    This system ensures efficient, accurate, and fair loan approvals, benefiting both financial institutions and applicants while reducing loan default risks.
+  </p>
+</div>
+
+<!--Advantages of the Proposed System-->
+<div class="container section">
+  <h1 class="header-txt">Advantages of the Proposed System</h1>
+  <p class="txt-body">
+    <ul>
+      <li>1.	Increased Prediction Accuracy – The use of advanced machine learning algorithms like Random Forest, XGBoost, and Neural Networks improves loan approval forecasting accuracy.</li>
+      <li>2.	Faster Loan Processing – Automating the decision-making process reduces manual work and speeds up loan approvals.</li>
+      <li>3.	Reduced Human Bias – Decisions are based on data-driven insights, minimizing subjective judgment and discrimination.</li>
+      <li>4.	Improved Risk Assessment – The system analyzes financial history and identifies high-risk applicants, helping to reduce loan default rates.</li>
+      <li>5.	Efficient Handling of Large Data – Machine learning models can process and analyze large datasets efficiently, improving decision-making.</li>
+      <li>6.	Better Customer Experience – Faster and more accurate loan approval processes enhance customer satisfaction.</li>
+      <li>7.	Cost-Effective – Reducing manual work lowers operational costs for financial institutions.</li>
+      <li>8.	Adaptive Learning – The system can be updated with new data to improve predictions over time, adapting to changing financial trends.</li>
+    </ul>
+    This automated and intelligent system ensures fair, fast, and efficient loan approvals, benefiting both financial institutions and borrowers.
+  </p>
+</div>
+
+<!--Working Principle-->
+<div class="container section">
+  <h1 class="header-txt">Working Principle</h1>
+  <p class="txt-body">
+    The proposed system follows a data-driven approach to predict loan approval using machine learning techniques. The working principle consists of the following key steps:
+    <ul>
+      <li>1.	Data Collection – Gather historical loan application data, including applicant details such as income, credit score, employment status, loan amount, and repayment history.</li>
+      <li>2.	Data Preprocessing – Clean and process the dataset by handling missing values, encoding categorical variables, and normalizing numerical data to improve model efficiency.</li>
+      <li>3.	Feature Selection & Engineering – Identify the most important factors influencing loan approval and create new meaningful features to enhance model accuracy.</li>
+      <li>4.	Model Selection & Training – Train machine learning models such as Logistic Regression, Decision Trees, Random Forest, XGBoost, or Neural Networks on the processed data to learn approval patterns.</li>
+      <li>5.	Model Evaluation & Optimization – Assess model performance using metrics like accuracy, precision, recall, and F1-score and fine-tune it using hyperparameter optimization to improve results.</li>
+      <li>6.	Loan Approval Prediction – Once trained, the model predicts whether a new loan application should be approved or rejected based on input features.</li>
+      <li>7.	Deployment & Real-Time Prediction – Integrate the trained model into a system that allows lenders to input applicant details and get instant loan eligibility results.</li>
+    </ul>
+   This system ensures faster, more accurate, and fair loan approval decisions, reducing risks for financial institutions while improving customer experience.
+  </p>
+</div>
+
+<div style="display: flex;">
+  <img src="{% static 'LoanPredictor/images/system_architecture.png' %}" alt="Loan Banner" class="img-fluid" style="width:500px;margin:auto;">
+</div>
+
+
+<!--System Requirements-->
+<div class="container section">
+  <h1 class="header-txt">System Requirements</h1>
+  <p class="txt-body">
+   System Requirements is nothing but an minimum requirements needed to be satisfied or to be presented to run this project. This minimum system requirements will not be compromised by anything. This is an mandatory requirement that a system should must meet to ensure the smooth execution flow of the program and to avoid un-necessary lag and crashes.
+
+    <h3 class="header-txt">Hardware Requirements</h3>
+      <ul>
+        <li>Processor : Intel i3 or equivalent.</li>
+        <li>Storage	  : 256 GB HDD or SSD.</li>
+        <li>Monitor	  : 15 inch VGA Color.</li>
+        <li>Mouse     : Logitech Mouse.</li>
+        <li>Ram	      : 4 GB</li>
+        <li>Keyboard  : Standard Keyboard</li>
+        <li>GPU       :Integrated GPU</li>
+        <li>Internet  : Basic internet connection</li>
+      </ul>
+
+
+    <h3 class="header-txt">Software Requirements</h3>
+      <ul>
+        <li>Operating System	: Windows 10/11.</li>
+        <li>Programming language  : Python 3.x (Main Language)</li>
+        <li>
+           Libraries	  :
+           <ul>
+             <li>1.  Pandas – For Data Manipulation</li>
+             <li>2.  Numpy –Numerical Operations</li>
+             <li>3.  Scikit – Learn – Machine Learning models</li>
+             <li>4.  Matplotlib/ Seaborn – Data Visualization</li>
+             <li>5.  Xgboost, Lightgbm – For advanced ML models(Optional)</li>
+             <li>6.  Joblib Or Pickle – Model saving/Loading</li>
+           </ul>
+        </li>
+        <li>
+           Tools & IDEs  	 :
+           <ul>
+             <li>1.  Jupyter Notebook / JupyterLab</li>
+             <li>2.  Visual studio Code / PyCharm</li>
+             <li>3.  Anaconda (Optional, but useful for managing environments)</li>
+           </ul>
+        </li>
+        <li>
+           Dataset Requirements :
+           <ul>
+             <li>1.  Applicant Income</li>
+             <li>2.  Credit History</li>
+             <li>3.  Loan Type</li>
+             <li>4.  Loan Amount etc</li>
+           </ul>
+        </li>
+        <li>
+           Optional (for deployment)  :
+           <ul><li>Django</li></ul>
+        </li>
+      </ul>
+  </p>
+</div>
+
+
+
+<!--Application-->
+<div class="container section" style="margin-bottom:30px;">
+  <h1 class="header-txt">Application</h1>
+  <p class="txt-body">
+    <ul>
+      <li>Banks & Financial Institutions – Automates loan approval decisions, improving accuracy and efficiency.</li>
+      <li>FinTech & Digital Lending – Enables real-time loan eligibility prediction for online applicants.</li>
+      <li>Credit Scoring & Risk Assessment – Helps lenders evaluate applicant risk and minimize defaults.</li>
+      <li>Microfinance & Government Loans – Supports small lenders and public sector loan approval processes.</li>
+      <li>Retail & E-Commerce Financing – Assists in "Buy Now, Pay Later" (BNPL) services for consumer credit.</li>
+    </ul>
+    This system enhances speed, accuracy, and fairness in loan approval processes.
+  </p>
+</div>
+
+<div id="footer">
+   <p>Designed by Thanigai Solutions</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
