@@ -1,0 +1,52 @@
+/*body{
+  background:url("https://img.freepik.com/free-photo/psychedelic-paper-shapes-with-copy-space_23-2149378246.jpg?t=st=1744709790~exp=1744713390~hmac=0f36369f925c2658152b70fb56dbd21d1d0be2a7bd1b492074e60cc04b212685&w=1380")
+
+}*/
+
+.active-menu{
+  color:red!important;
+}
+
+.header-txt{
+  font-size:24px;
+  color:dodgerBlue
+}
+
+#landing-page{
+
+}
+
+#img-overlay{
+  background-color:#000;
+  width:100%;
+  position:relative;
+  z-index:100;
+}
+
+.section {
+  padding: 20px 10px;
+  margin:  auto;
+  margin-top : 10px;
+  margin-bottom:0px;
+}
+
+.txt-body{
+    color: dimgrey;
+    text-align: justify;
+}
+
+#footer{
+  background-color : #1877F2;
+  color:#fff;
+  padding:10px 0px;
+  text-align:center;
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+
+#footer p{
+  margin:0px;
+}
